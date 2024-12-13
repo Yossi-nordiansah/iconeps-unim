@@ -1,0 +1,17 @@
+GET http://localhost:3000/users
+
+###
+POST http://localhost:3000/users/register
+Content-Type: application/json
+
+{
+    "username": "Yossi Nordiansah",
+    "password": "yossi234",
+    "confPassword": "yossi234",
+    "nama": "Yossi Nordiansah",
+    "nim": "52104110023",
+    "email": "yossi.nordiansah99@gmail.com",
+    "prodi": "Teknik Informatika",
+    "semester": "7",
+    "nomor_telepon": "085655230897"
+}

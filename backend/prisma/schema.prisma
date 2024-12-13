@@ -8,82 +8,77 @@ datasource db {
 }
 
 model kelas {
-  id           Int              @id @default(autoincrement())
-  pelatihan_id Int
-  tipe_kelas   kelas_tipe_kelas
-  nama_kelas   String           @db.VarChar(50)
-  pelatihan    pelatihan        @relation(fields: [pelatihan_id], references: [id], onDelete: Cascade, onUpdate: Restrict, map: "kelas_ibfk_1")
-  pendaftaran  pendaftaran[]
+  id          Int              @id @default(autoincrement())
+  id_peserta  Int
+  tipe_kelas  kelas_tipe_kelas
+  nama_kelas  String           @db.VarChar(50)
+  divisi      kelas_divisi
+  jadwal      jadwal[]
+  pendaftaran pendaftaran      @relation(fields: [id_peserta], references: [id], onDelete: Cascade, map: "kelas_ibfk_1")
 
-  @@index([pelatihan_id], map: "pelatihan_id")
+  @@index([id_peserta], map: "id_peserta")
+  @@index([id_peserta], map: "id_peserta_2")
 }
 
 model mahasiswa {
-  id            Int               @id @default(autoincrement())
+  id            Int           @id @default(autoincrement())
   user_id       Int
-  nama          String            @db.VarChar(100)
-  email         String            @unique(map: "email") @db.VarChar(100)
-  nomor_telepon String?           @db.VarChar(15)
-  alamat        String?           @db.Text
-  status        mahasiswa_status? @default(pendaftar)
-  users         users             @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: Restrict, map: "mahasiswa_ibfk_1")
+  nama          String        @db.VarChar(100)
+  email         String        @db.VarChar(100)
+  nomor_telepon String        @db.VarChar(15)
+  prodi         String        @db.VarChar(50)
+  semester      String        @db.VarChar(2)
+  nim           String        @db.VarChar(15)
+  users         users         @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "mahasiswa_ibfk_1")
   pendaftaran   pendaftaran[]
 
-  @@index([user_id], map: "user_id")
-}
-
-model pelatihan {
-  id              Int                      @id @default(autoincrement())
-  nama_pelatihan  pelatihan_nama_pelatihan
-  deskripsi       String?                  @db.Text
-  tanggal_mulai   DateTime                 @db.Date
-  tanggal_selesai DateTime                 @db.Date
-  lokasi          String?                  @db.VarChar(255)
-  created_at      DateTime                 @default(now()) @db.Timestamp(0)
-  kelas           kelas[]
-  pendaftaran     pendaftaran[]
+  @@index([user_id], map: "mahasiswa_ibfk_1")
 }
 
 model pendaftaran {
-  id               Int                 @id @default(autoincrement())
-  mahasiswa_id     Int
-  pelatihan_id     Int
-  kelas_id         Int?
-  status           pendaftaran_status? @default(pending)
-  tahap            pendaftaran_tahap?  @default(pendaftar)
-  bukti_pembayaran String?             @db.VarChar(255)
-  mahasiswa        mahasiswa           @relation(fields: [mahasiswa_id], references: [id], onDelete: Cascade, onUpdate: Restrict, map: "pendaftaran_ibfk_1")
-  pelatihan        pelatihan           @relation(fields: [pelatihan_id], references: [id], onDelete: Cascade, onUpdate: Restrict, map: "pendaftaran_ibfk_2")
-  kelas            kelas?              @relation(fields: [kelas_id], references: [id], onUpdate: Restrict, map: "pendaftaran_ibfk_3")
-  sertifikat       sertifikat[]
+  id                  Int                       @id @default(autoincrement())
+  mahasiswa_id        Int
+  status              pendaftaran_status?       @default(pendaftar)
+  bukti_pembayaran    String?                   @db.VarChar(255)
+  divisi              pendaftaran_divisi
+  tanggal_pendaftaran DateTime                  @default(now()) @db.Timestamp(0)
+  pilihan_kelas       pendaftaran_pilihan_kelas
+  kelas               kelas[]
+  mahasiswa           mahasiswa                 @relation(fields: [mahasiswa_id], references: [id], onDelete: Cascade, map: "pendaftaran_ibfk_1")
+  sertifikat          sertifikat[]
 
-  @@index([kelas_id], map: "kelas_id")
-  @@index([mahasiswa_id], map: "mahasiswa_id")
-  @@index([pelatihan_id], map: "pelatihan_id")
+  @@index([mahasiswa_id], map: "pendaftaran_ibfk_1")
 }
 
 model sertifikat {
   id                  Int         @id @default(autoincrement())
-  pendaftaran_id      Int
-  nomor_sertifikat    String      @unique(map: "nomor_sertifikat") @db.VarChar(50)
+  id_peserta          Int
+  nomor_sertifikat    String?     @db.VarChar(50)
   tanggal_diterbitkan DateTime    @db.Date
-  pendaftaran         pendaftaran @relation(fields: [pendaftaran_id], references: [id], onDelete: Cascade, onUpdate: Restrict, map: "sertifikat_ibfk_1")
+  pendaftaran         pendaftaran @relation(fields: [id_peserta], references: [id], onDelete: Cascade, map: "id_peserta_fk")
 
-  @@index([pendaftaran_id], map: "pendaftaran_id")
+  @@index([id_peserta], map: "id_peserta_fk")
 }
 
 model users {
   id         Int         @id @default(autoincrement())
-  username   String      @unique(map: "username") @db.VarChar(50)
+  username   String      @db.VarChar(100)
   password   String      @db.VarChar(255)
   role       users_role
   created_at DateTime    @default(now()) @db.Timestamp(0)
   mahasiswa  mahasiswa[]
 }
 
-enum pelatihan_nama_pelatihan {
-  pusbas
-  puskom
+model jadwal {
+  id          Int     @id
+  id_kelas    Int
+  instruktur  String? @db.VarChar(50)
+  hari        String  @db.VarChar(10)
+  jam_mulai   String  @db.VarChar(5)
+  jam_selesai String  @db.VarChar(5)
+  kelas       kelas   @relation(fields: [id_kelas], references: [id], onDelete: Cascade, map: "id_kelas_fk")
+
+  @@index([id_kelas], map: "id_kelas_fk")
 }
 
 enum kelas_tipe_kelas {
@@ -98,22 +93,24 @@ enum users_role {
 }
 
 enum pendaftaran_status {
-  pending
-  valid
-  invalid
-}
-
-enum pendaftaran_tahap {
   pendaftar
-  peserta
-  lulus
-  remidi
-}
-
-enum mahasiswa_status {
-  pendaftar
-  peserta
-  lulus
-  remidi
   terdaftar
+  peserta
+  lulus
+  remidi
+}
+
+enum kelas_divisi {
+  pusbas
+  puskom
+}
+
+enum pendaftaran_divisi {
+  pusbas
+  puskom
+}
+
+enum pendaftaran_pilihan_kelas {
+  weekday
+  weekend
 }
