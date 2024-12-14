@@ -66,6 +66,7 @@ model users {
   password   String      @db.VarChar(255)
   role       users_role
   created_at DateTime    @default(now()) @db.Timestamp(0)
+  admin      admin[]
   mahasiswa  mahasiswa[]
 }
 
@@ -79,6 +80,15 @@ model jadwal {
   kelas       kelas   @relation(fields: [id_kelas], references: [id], onDelete: Cascade, map: "id_kelas_fk")
 
   @@index([id_kelas], map: "id_kelas_fk")
+}
+
+model admin {
+  id       Int    @id @default(autoincrement())
+  users_id Int
+  nama     String @db.VarChar(100)
+  users    users  @relation(fields: [users_id], references: [id], onDelete: Cascade, map: "id_users_fk")
+
+  @@index([users_id], map: "id_users_fk")
 }
 
 enum kelas_tipe_kelas {
