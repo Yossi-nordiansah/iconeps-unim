@@ -15,3 +15,12 @@ Content-Type: application/json
     "semester": "7",
     "nomor_telepon": "085655230897"
 }
+
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "email": "yossi.nordiansah99@gmail.com",
+    "password": "yossi234"
+}
