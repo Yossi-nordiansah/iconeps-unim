@@ -101,4 +101,20 @@ export const Login = async (req, res) => {
     } catch (error) {
         res.status(404).json({ message: "Terjadi kesalahan pada server" })
     }
+};
+
+export const Logout = async (req, res) => {
+    const refreshToken = req.cookies.refreshToken;
+    if(!refreshToken) return res.sendStatus(204);
+    const user = await prismaClient.users.findMany({
+        where : {
+            refresh_token : refreshToken
+        },
+        include : {
+            mahasiswa: true
+        }
+    });
+    if(!user[0]) return res.sendStatus(204);
+    const userId = user[0].id;
+    
 }

@@ -25,3 +25,7 @@ Content-Type: application/json
     "email": "yossi.nordiansah99@gmail.com",
     "password": "yossi234"
 }
+
+###
+GET http://localhost:3000/users/token
+

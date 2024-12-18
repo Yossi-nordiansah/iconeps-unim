@@ -1,4 +1,4 @@
-import prismaClient from "../src/prisma-client";
+import prismaClient from "../src/prisma-client.js";
 import jwt from "jsonwebtoken";
 
 export const refreshToken =  async (req, res) => {
@@ -19,7 +19,8 @@ export const refreshToken =  async (req, res) => {
             const userId = user[0].id;
             const name = user[0].mahasiswa[0].nama;
             const email = user[0].mahasiswa[0].email;
-            const accessToken = jwt.sign({userId})
+            const accessToken = jwt.sign({userId, name, email}, process.env.ACCESS_TOKEN_SECRET, {expiresIn : '20s'})
+            res.json({accessToken})
         })
     } catch (error) {
         console.log(error)

@@ -4,6 +4,7 @@ import { getUsers } from '../controllers/users.js';
 import { Register } from '../controllers/users.js';
 import { Login } from '../controllers/users.js';
 import { verifyToken } from '../middleware/VerifyToken.js';
+import { refreshToken } from '../controllers/refershToken.js';
 dotenv.config()
 
 const router = express.Router();
@@ -11,5 +12,6 @@ const router = express.Router();
 router.get('/users', verifyToken, getUsers);
 router.post('/users/register', Register);
 router.post("/users/login", Login)
+router.get("/users/token",refreshToken)
 
 export default router;
