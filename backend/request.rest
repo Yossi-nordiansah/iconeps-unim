@@ -1,5 +1,5 @@
 GET http://localhost:3000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJuYW1lIjoiWW9zc2kgTm9yZGlhbnNhaCIsImVtYWlsIjoieW9zc2kubm9yZGlhbnNhaDk5QGdtYWlsLmNvbSIsImlhdCI6MTczNDQ0OTM3MywiZXhwIjoxNzM0NDQ5MzkzfQ.TGS6NVNkU4psKwFqrqgBWB30_eOLbgrktM1ccpgFaUI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJuYW1lIjoiWW9zc2kgTm9yZGlhbnNhaCIsImVtYWlsIjoieW9zc2kubm9yZGlhbnNhaDk5QGdtYWlsLmNvbSIsImlhdCI6MTczNDUzMjEwNiwiZXhwIjoxNzM0NTMyMTI2fQ.v8KRrSK91aP0NIFEbZUwqzBFILviVzvlr_rWsO3doek
 
 ###
 POST http://localhost:3000/users/register
@@ -28,4 +28,7 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/users/token
+
+###
+DELETE http://localhost:3000/users/logout
 

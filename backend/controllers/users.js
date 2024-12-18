@@ -116,5 +116,14 @@ export const Logout = async (req, res) => {
     });
     if(!user[0]) return res.sendStatus(204);
     const userId = user[0].id;
-    
+    await prismaClient.users.update({
+        where : {
+            id : userId
+        },
+        data : {
+            refresh_token : null
+        }
+    });
+    res.clearCookie('refreshToken');
+    return res.sendStatus(200);
 }
