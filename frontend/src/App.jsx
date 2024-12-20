@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from "axios";
 import Login from './components/Login';
-import Daftar from './pages/Daftar';
+import Registrasi from './pages/Registrasi';
 axios.defaults.withCredentials = true;
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className='static'>
       {/* <Login/> */}
-      <Daftar/>
+      <Registrasi/>
     </div>
   )
 }
