@@ -39,10 +39,13 @@ model pendaftaran {
   id                  Int                       @id @default(autoincrement())
   mahasiswa_id        Int
   status              pendaftaran_status?       @default(pendaftar)
-  bukti_pembayaran    String?                   @db.VarChar(255)
+  bukti_pembayaran    String                    @db.VarChar(255)
   divisi              pendaftaran_divisi
   tanggal_pendaftaran DateTime                  @default(now()) @db.Timestamp(0)
   pilihan_kelas       pendaftaran_pilihan_kelas
+  loket_pembayaran    String                    @db.VarChar(100)
+  tanggal_pembayaran  String                    @map("tanggal pembayaran") @db.VarChar(15)
+  nominal_pembayaran  Int
   kelas               kelas[]
   mahasiswa           mahasiswa                 @relation(fields: [mahasiswa_id], references: [id], onDelete: Cascade, map: "pendaftaran_ibfk_1")
   sertifikat          sertifikat[]
