@@ -42,8 +42,7 @@ const Registrasi = () => {
             <input type="text" id='nim' className='w-full px-2 py-1 rounded-md outline-none shadow-2xl border-blue-300 border text-black' required />
           </div>
         </div>
-        <div className='mb-3 flex justify-center gap-2 flex-wrap'>
-          <div className='w-full sm:w-fit'>
+          <div className='w-full'>
             <label className='mb-1 block font-semibold' htmlFor="password">Password</label>
             <div className='flex justify-between rounded-md border border-blue-300 overflow-hidden bg-white shadow-2xl'>
               <input type={`${showPasswordButton ? 'text' : 'password'}`} id='password' required className='w-[85%] px-2 py-1 outline-none bg-transparent text-black' />
@@ -52,7 +51,7 @@ const Registrasi = () => {
               </div>
             </div>
           </div>
-          <div className='w-full sm:w-fit'>
+          <div className='w-full mb-4'>
             <label className='mb-1 block font-semibold' htmlFor="password">Confirm Password</label>
             <div className='flex justify-between rounded-md border border-blue-300 overflow-hidden bg-white shadow-2xl'>
               <input type={`${showConfirmPasswordButton ? 'text' : 'password'}`} id='password' required className='w-[85%] px-2 py-1 outline-none bg-transparent text-black' />
@@ -61,8 +60,7 @@ const Registrasi = () => {
               </div>
             </div>
           </div>
-        </div>
-        <button className='bg-gradient-to-r from-blue-600 to-blue-900 w-full py-1 rounded font-semibold text-white' type='submit'>Registrasi</button>
+        <button className='bg-gradient-to-r from-blue-600 to-blue-900 w-full py-2 rounded font-semibold text-white' type='submit'>Registrasi</button>
       </div>
     </div>
   )
