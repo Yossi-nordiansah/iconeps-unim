@@ -9,7 +9,7 @@ const Registrasi = () => {
   const [showConfirmPasswordButton, setShowConfirmPasswordButton] = useState(false);
 
   return (
-    <div className='min-h-screen bg-gradient-to-b from-blue-800 to-teal-300 py-10 flex justify-center items-center px-4'>
+    <div className='min-h-screen bg-gradient-to-b shadow-2xl from-blue-800 to-teal-300 py-10 flex justify-center items-center px-4'>
       <div className='min-w-64 h-fit max-w-[450px] rounded-lg text-gray-950 backdrop-blur bg-white/20 py-4 px-4'>
         <h1 className='font-semibold text-center mb-2 text-xl'>Registrasi</h1>
         <div className='mb-3 flex justify-center gap-2 flex-wrap'>
