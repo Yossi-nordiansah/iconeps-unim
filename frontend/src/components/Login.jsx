@@ -3,10 +3,12 @@ import showPassword from '../assets/icons/showPassword.svg';
 import hiddenPassword from '../assets/icons/hidePassword.svg';
 import closeIcon from '../assets/icons/close.svg'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 
     const [showPasswordButton, setShowPasswordButton] = useState(false);
+    const navigate = useNavigate();
 
     return (
         <div className='absolute w-[30%] min-w-72 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-black/10 backdrop-blur xl:px-10 xl:py-10 py-4 px-4 rounded-2xl'>
@@ -30,7 +32,7 @@ const Login = () => {
                         <button className='bg-gradient-to-r from-blue-600 to-blue-900 w-full py-1 rounded font-semibold text-white' type='submit'>Login</button>
                     </div>
                 </form>
-                <p className='text-sm text-center'>Belum punya akun? <a className='text-blue-600 font-semibold' href="">Daftar Sekarang</a></p>
+                <p className='text-sm text-center'>Belum punya akun? <span className='text-blue-600 font-semibold cursor-pointer' onClick={()=>navigate('/register')}>Daftar Sekarang</span></p>
             </div>
         </div>
 

@@ -21,7 +21,7 @@ export const getUsers = async (req, res) => {
 };
 
 export const Register = async (req, res) => {
-    const { username, password, confPassword, nama, nim, email, prodi, semester, nomor_telepon } = req.body;
+    const { password, confPassword, nama, nim, email, prodi, semester, nomorTelepon } = req.body;
     if (password !== confPassword) return res.status(400).json({ message: "password dan confirm password tidak cocok" });
     const salt = await bcrypt.genSalt();
     const hashPassword = await bcrypt.hash(password, salt);
@@ -29,7 +29,7 @@ export const Register = async (req, res) => {
     try {
         const users = await prismaClient.users.create({
             data: {
-                username: username,
+                username: nama,
                 password: hashPassword,
                 role: "mahasiswa"
             }
@@ -43,10 +43,9 @@ export const Register = async (req, res) => {
                 email: email,
                 prodi: prodi,
                 semester: semester,
-                nomor_telepon: nomor_telepon
+                nomor_telepon: nomorTelepon
             }
         })
-
         res.status(201).send({ message: "Registrasi Berhasil" });
     } catch (error) {
         res.status(500).send({ message: 'Registrasi Gagal' })
