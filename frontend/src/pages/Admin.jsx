@@ -20,7 +20,7 @@ const Admin = () => {
       console.log(decoded);
       setName(decoded.name);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 

@@ -4,6 +4,7 @@ import Login from './components/Login';
 import Registrasi from './pages/Registrasi';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Admin from './pages/Admin';
+import Navbar from './components/Navbar';
 axios.defaults.withCredentials = true;
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path='/admin' Component={Admin} />
         <Route path="*" element={
           <>
+            <Navbar/>
             <Routes>
               <Route path='/login' Component={Login} />
               <Route path='/register' Component={Registrasi} />
