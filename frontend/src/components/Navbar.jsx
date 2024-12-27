@@ -14,11 +14,11 @@ const Navbar = () => {
 
   const handleShowMenuAccount = () => {
     setShowMenu(!showMenu);
-    setShowMenuAccount(!showMenuAccount);
+    setShowMenuAccount(false);
   }
 
   return (
-    <div className='bg-gradient-to-b overflow-hidden from-blue-800 to-blue-950 px-5 sm:py-2 py-4 flex items-center justify-between'>
+    <div className='bg-gradient-to-b w-full overflow-hidden from-blue-800 to-blue-950 px-5 sm:py-2 py-4 flex items-center justify-between'>
       <div className='flex items-center gap-2'>
         <img src={logo} alt="" className='sm:w-11 w-8' />
         <h1 className='text-white sm:text-4xl text-2xl font-robotoBold'>ICONEPS</h1>
