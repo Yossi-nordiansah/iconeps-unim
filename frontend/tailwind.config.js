@@ -13,7 +13,13 @@ export default {
       'lg' : '1024px',
       'xl' : '1280px',
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        roboto: ['roboto-normal'], 
+        robotoBold: ['roboto-bold'], 
+        robotoExtraBold: ['roboto-extrabold'], 
+      }
+    },
   },
   plugins: [],
 }
