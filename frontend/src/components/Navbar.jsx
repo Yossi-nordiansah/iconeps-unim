@@ -18,7 +18,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className='bg-gradient-to-b w-full overflow-hidden from-blue-800 to-blue-950 px-5 sm:py-2 py-4 flex items-center justify-between'>
+    <div className='overflow-x-hidden bg-gradient-to-b w-full from-blue-800 to-blue-950 px-5 sm:py-2 py-4 flex items-center justify-between'>
       <div className='flex items-center gap-2'>
         <img src={logo} alt="" className='sm:w-11 w-8' />
         <h1 className='text-white sm:text-4xl text-2xl font-robotoBold'>ICONEPS</h1>
@@ -33,7 +33,7 @@ const Navbar = () => {
         </ul>
       </div>
       <img src={burgerIcon} className='sm:hidden' alt="menu icon" onClick={()=>setShowMenu(!showMenu)}/>
-      <div className={`absolute top-0 right-0 bg-white pt-3 items-center shadow-2xl duration-500 rounded-bl-3xl ${showMenu? 'max-w-96' : 'max-w-0'}`}>
+      <div className={`absolute overflow-x-hidden top-0 right-0 bg-white pt-3 items-center shadow-2xl duration-500 rounded-bl-3xl ${showMenu? 'w-44' : 'w-0'}`}>
         <img src={closeIcon} className='w-10 mb-2 ml-4' alt="close icon" onClick={()=>setShowMenu(!showMenu)}/>
         <div className='flex flex-col font-bold text-slate-700'>
           <Link to={''} className='py-4 text-2xl px-5 border-b-2 border-t-2' onClick={()=>setShowMenu(!showMenu)}>
