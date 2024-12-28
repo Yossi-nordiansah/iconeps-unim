@@ -15,13 +15,13 @@ function App() {
       <Routes>
         <Route path='/admin' Component={Admin} />
         <Route path="*" element={
-          <div>
+          <>
             <Navbar/>
             <Routes>
               <Route path='/login' Component={Login} />
               <Route path='/register' Component={Registrasi} />
             </Routes>
-          </div>
+          </>
         } />
       </Routes>
     </Router>
