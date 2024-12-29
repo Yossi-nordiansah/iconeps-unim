@@ -5,6 +5,7 @@ import Registrasi from './pages/Registrasi';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Admin from './pages/Admin';
 import Navbar from './components/Navbar';
+import Home from './pages/Home';
 axios.defaults.withCredentials = true;
 
 function App() {
@@ -18,8 +19,9 @@ function App() {
           <>
             <Navbar/>
             <Routes>
-              <Route path='/login' Component={Login} />
-              <Route path='/register' Component={Registrasi} />
+              <Route path='/iconeps-unim/' Component={Home}/>
+              {/* <Route path='/login' Component={Login} />
+              <Route path='/register' Component={Registrasi} /> */}
             </Routes>
           </>
         } />
