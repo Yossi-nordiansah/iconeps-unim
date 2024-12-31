@@ -20,8 +20,8 @@ function App() {
             <Navbar/>
             <Routes>
               <Route path='/iconeps-unim/' Component={Home}/>
-              {/* <Route path='/login' Component={Login} />
-              <Route path='/register' Component={Registrasi} /> */}
+              <Route path='/login' Component={Login} />
+              <Route path='/register' Component={Registrasi} />
             </Routes>
           </>
         } />

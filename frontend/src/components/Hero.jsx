@@ -1,13 +1,14 @@
 import React from 'react';
-import bgHero from '../assets/images/hero.png'
+import bgHero from '../assets/images/bghero.png';
+import hero from '../assets/images/hero.png'
 
 const Hero = () => {
 
 
 
     return (
-        <div className='flex justify-center gap-10 py-10 bg-gradient-to-br from-orange-200 to-orange-500'>
-            <img src={bgHero} className='max-w-[45%] min-w-20 drop-shadow-2xl' alt="hero background" />
+        <div className='h-[1000px] flex justify-center gap-10 py-10' style={{backgroundImage: `url(${bgHero})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
+            <img src={hero} className='max-w-[45%] min-w-20 drop-shadow-2xl' alt="hero background" />
             <div className='w-1/2'>
                 <p>
                     Tingkatkan strategi belajar dan hasil akademik Anda. Hemat waktu dan tenaga dengan belajar lebih efektif. Raih dampak yang lebih besar dengan menguasai keterampilan bahasa Inggris dan Microsoft Office bersama ICONEPS.
