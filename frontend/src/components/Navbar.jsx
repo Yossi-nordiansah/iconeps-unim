@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../assets/images/iconeps_logo.png';
 import burgerIcon from '../assets/icons/burgerIcon.svg';
 import closeIcon from '../assets/icons/close.svg';
@@ -19,32 +19,57 @@ const Navbar = () => {
     setShowMenu(!showMenu);
   };
 
-  const changeBackground = () => {
-    if (window.scrollY >= 50) {
-      setChangeNavbarColor(true)
-    } else {
-      setChangeNavbarColor(false)
-    }
-  }
+  useEffect(() => {
+    const changeBackground = () => {
+      if (window.scrollY >= 50) {
+        setChangeNavbarColor(true);
+      } else {
+        setChangeNavbarColor(false);
+      }
+    };
 
-  window.addEventListener('scroll', changeBackground);
+    window.addEventListener('scroll', changeBackground);
+
+    return () => {
+      window.removeEventListener('scroll', changeBackground);
+    };
+  }, [])
+
+  // const changeBackground = () => {
+  //   if (window.scrollY >= 50) {
+  //     setChangeNavbarColor(true)
+  //   } else {
+  //     setChangeNavbarColor(false)
+  //   }
+  // }
+
+  // window.addEventListener('scroll', changeBackground);
 
   return (
-    <div className={`fixed z-10 flex ${changeNavbarColor? 'bg-white/25 backdrop-blur-lg' : 'bg-transparent'} items-center justify-between w-full px-5 py-4 overflow-x-hidden sm:py-0`}>
+    <div className={`fixed z-10 flex ${changeNavbarColor ? 'bg-white/25 backdrop-blur-lg' : 'bg-transparent'} items-center justify-between w-full px-5 py-4 overflow-visible sm:py-0`}>
       <div className='flex items-center gap-2'>
         <img src={logo} alt="" className='w-8 sm:w-11' />
         <h1 className='text-2xl text-white sm:text-4xl font-robotoBold'>ICONEPS</h1>
       </div>
       <div className='hidden sm:block'>
         <div className='flex items-center text-white font-roboto'>
-          <Link className='px-4 py-4 hover:bg-blue-400'><a href="">Home</a></Link>
-          <Link className='px-4 py-4 hover:bg-blue-400'><a href="">Jadwal</a></Link>
-          <Link className='px-4 py-4 hover:bg-blue-400'><a href="">Pelatihan</a></Link>
+          <Link className="relative px-4 py-4 group">
+            <p>Home</p>
+            <div className="absolute bottom-0 left-0 w-0 h-1 transition-all duration-300 bg-orange-500 group-hover:w-full"></div>
+          </Link>
+          <Link className="relative px-4 py-4 group">
+            <p>Jadwal</p>
+            <div className="absolute bottom-0 left-0 w-0 h-1 transition-all duration-300 bg-orange-500 group-hover:w-full"></div>
+          </Link>
+          <Link className="relative px-4 py-4 group">
+            <p>Pelatihan</p>
+            <div className="absolute bottom-0 left-0 w-0 h-1 transition-all duration-300 bg-orange-500 group-hover:w-full"></div>
+          </Link>
           <Link onClick={() => setShowDesktopMenuAccount(!showDesktopMenuAccount)} className="px-4 py-2 group">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="30px" height="30px" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" /></svg>
           </Link>
         </div>
-        <div className={`fixed top-16 shadow-2xl z-10 bg-white overflow-hidden right-0 ${showDesktopMenuAccount ? 'translate-y-0' : '-translate-y-44'} duration-200`}>
+        <div className={`absolute top-14 shadow-2xl z-20 bg-white right-0 transition-transform duration-200 ${showDesktopMenuAccount ? 'translate-x-0' : 'translate-x-40'}`}>
           <Link to={''} className='flex items-center gap-1 px-6 py-3 min-w-fit' onClick={() => setShowDesktopMenuAccount(!showDesktopMenuAccount)}>
             <img src={editIcon} alt="edit profil" />
             <p className='min-w-fit'>Edit Profil</p>
