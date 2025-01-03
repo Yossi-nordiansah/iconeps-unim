@@ -7,7 +7,7 @@ const Hero = () => {
 
 
     return (
-        <div className='h-[1000px] flex justify-center gap-10 py-10' style={{backgroundImage: `url(${bgHero})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
+        <div className='h-[1000px] flex justify-center gap-10 py-10 bg-gradient-to-b from-primary to-transparent'>
             <img src={hero} className='max-w-[45%] min-w-20 drop-shadow-2xl' alt="hero background" />
             <div className='w-1/2'>
                 <p>
