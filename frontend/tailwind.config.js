@@ -20,8 +20,10 @@ export default {
         robotoExtraBold: ['roboto-extrabold'], 
       },
       colors : {
-        primary : '#315a39',
-        secondary : "#b1dd9e",
+        primary : '#2E5077',
+        secondary : "#4DA1A9",
+        green : "#79D7BE",
+        grey : "#F6F4F0"
       }
     },
   },

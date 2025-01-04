@@ -35,18 +35,8 @@ const Navbar = () => {
     };
   }, [])
 
-  // const changeBackground = () => {
-  //   if (window.scrollY >= 50) {
-  //     setChangeNavbarColor(true)
-  //   } else {
-  //     setChangeNavbarColor(false)
-  //   }
-  // }
-
-  // window.addEventListener('scroll', changeBackground);
-
   return (
-    <div className={`fixed z-10 flex ${changeNavbarColor ? 'bg-white/25 backdrop-blur-lg' : 'bg-transparent'} items-center justify-between w-full px-5 py-4 overflow-visible sm:py-0`}>
+    <div className={`fixed z-10 flex ${changeNavbarColor ? 'bg-secondary' : 'bg-transparent'} items-center justify-between w-full px-5 py-4 overflow-visible sm:py-0`}>
       <div className='flex items-center gap-2'>
         <img src={logo} alt="" className='w-8 sm:w-11' />
         <h1 className='text-2xl text-white sm:text-4xl font-robotoBold'>ICONEPS</h1>
@@ -70,13 +60,13 @@ const Navbar = () => {
           </Link>
         </div>
         <div className={`absolute top-14 shadow-2xl z-20 bg-white right-0 transition-transform duration-200 ${showDesktopMenuAccount ? 'translate-x-0' : 'translate-x-40'}`}>
-          <Link to={''} className='flex items-center gap-1 px-6 py-3 min-w-fit' onClick={() => setShowDesktopMenuAccount(!showDesktopMenuAccount)}>
-            <img src={editIcon} alt="edit profil" />
-            <p className='min-w-fit'>Edit Profil</p>
+          <Link to={''} className='flex items-stretch gap-1 px-4 py-2 min-w-fit' onClick={() => setShowDesktopMenuAccount(!showDesktopMenuAccount)}>
+            <img src={editIcon} className='w-5' alt="edit profil" />
+            <p className='text-sm min-w-fit'>Edit Profil</p>
           </Link>
-          <Link to={''} className='flex items-center gap-1 px-6 py-3 min-w-fit' onClick={() => setShowDesktopMenuAccount(!showDesktopMenuAccount)}>
-            <img src={logoutIcon} alt="logout" />
-            <p className='min-w-fit'>Logout</p>
+          <Link to={''} className='flex items-stretch gap-1 px-4 py-2 min-w-fit' onClick={() => setShowDesktopMenuAccount(!showDesktopMenuAccount)}>
+            <img src={logoutIcon} className='w-5' alt="logout" />
+            <p className='text-sm min-w-fit'>Logout</p>
           </Link>
         </div>
       </div>
