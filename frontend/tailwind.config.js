@@ -17,13 +17,18 @@ export default {
       fontFamily: {
         roboto: ['roboto-normal'], 
         robotoBold: ['roboto-bold'], 
-        robotoExtraBold: ['roboto-extrabold'], 
+        robotoExtraBold: ['roboto-extrabold'],
+        radjdhani_semibold : ['radjdhani_semibold'],
+        radjdhani_medium:['radjdhani_medium'],
+        radjdhani_bold:['radjdhani_bold'],
+        radjdhani_regular:['radjdhani_regular'],
+        radjdhani_light:['radjdhani_light'] 
       },
       colors : {
-        primary : '#2E5077',
-        secondary : "#4DA1A9",
-        green : "#79D7BE",
-        grey : "#F6F4F0"
+        primary : '#2E073F',
+        secondary : "#7A1CAC",
+        purple : "#AD49E1",
+        whitepurple : "#EBD3F8"
       }
     },
   },

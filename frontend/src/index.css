@@ -16,3 +16,24 @@
     font-family: 'roboto-extrabold';
     src: url('./assets/fonts/Poppins-ExtraBold.ttf') format('truetype');
   }
+
+  @font-face {
+    font-family: 'radjdhani_bold';
+    src: url('./assets/fonts/Rajdhani-Bold.ttf') format('truetype');
+  }
+    @font-face {
+      font-family: 'radjdhani_semibold';
+      src: url('./assets/fonts/Rajdhani-SemiBold.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'radjdhani_medium';
+      src: url('./assets/fonts/Rajdhani-Medium.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'radjdhani_regular';
+      src: url('./assets/fonts/Rajdhani-Regular.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'radjdhani_light';
+      src: url('./assets/fonts/Rajdhani-Light.ttf') format('truetype');
+    }
