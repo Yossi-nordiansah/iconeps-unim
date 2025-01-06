@@ -29,7 +29,13 @@ export default {
         secondary : "#7A1CAC",
         purple : "#AD49E1",
         whitepurple : "#EBD3F8"
-      }
+      },
+      boxShadow: {
+        'custom-light': '0 4px 6px -1px rgba(138, 0, 230, 0.5), 0 2px 4px -1px rgba(255, 77, 255, 0.3)',
+      },
+      dropShadow: {
+        'custom-light': '0 1px 2px rgba(138, 0, 230, 0.5)'
+      },
     },
   },
   plugins: [],

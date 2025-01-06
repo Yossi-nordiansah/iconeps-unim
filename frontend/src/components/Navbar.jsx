@@ -42,7 +42,7 @@ const Navbar = () => {
         <h1 className='text-2xl text-white sm:text-4xl font-robotoBold'>ICONEPS</h1>
       </div>
       <div className='hidden sm:block'>
-        <div className='flex items-center text-white font-roboto'>
+        <div className='flex items-center text-white font-roboto'> 
           <Link className="relative px-4 py-4 group">
             <p>Home</p>
             <div className="absolute bottom-0 left-0 w-0 h-1 transition-all duration-300 bg-purple group-hover:w-full"></div>

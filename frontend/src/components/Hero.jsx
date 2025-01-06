@@ -38,10 +38,10 @@ const Hero = () => {
                 </SwiperSlide>
             </Swiper>
             <div className='sm:max-w-[80%] w-11/12 absolute z-10 top-1/2 -translate-y-1/2'>
-                <p className='mx-auto mb-6 text-3xl text-center text-white drop-shadow-2xl font-radjdhani_bold sm:text-4xl'>
+                <p className='mx-auto mb-6 text-3xl text-center text-white drop-shadow-custom-light font-radjdhani_bold sm:text-4xl'>
                     Tingkatkan Strategi Belajar dan Skill Kamu. Belajar Lebih Efektif dan Fleksibel. Buat Portofolio Yang Lebih Professional dengan Dibekali keterampilan Bahasa Inggris dan Microsoft Office.
                 </p>
-                <button className='block px-3 py-2 mx-auto text-xl text-white shadow-2xl xl:text-base bg-purple font-robotoExtraBold rounded-xl'>Daftar Sekarang</button>
+                <button className='block px-3 py-2 mx-auto text-xl text-white shadow-custom-light xl:text-base bg-purple font-robotoExtraBold rounded-xl'>Daftar Sekarang</button>
             </div>
         </div>
     )
