@@ -36,7 +36,7 @@ const Navbar = () => {
   }, [])
 
   return (
-    <div className={`fixed z-20 flex ${changeNavbarColor ? 'bg-primary' : 'bg-transparent'} items-center justify-between w-full px-5 py-4 overflow-visible xl:py-0`}>
+    <div className={`fixed z-20 flex ${changeNavbarColor ? 'bg-primary/55 backdrop-blur-xl' : 'bg-transparent'} items-center justify-between w-full px-5 py-4 overflow-visible xl:py-0`}>
       <div className='flex items-center gap-2'>
         <img src={logo} alt="" className='w-8 sm:w-11' />
         <h1 className='text-2xl text-white sm:text-4xl font-robotoBold'>ICONEPS</h1>
