@@ -25,16 +25,18 @@ export default {
         radjdhani_light:['radjdhani_light'] 
       },
       colors : {
-        primary : '#2E073F',
-        secondary : "#7A1CAC",
-        purple : "#AD49E1",
-        whitepurple : "#EBD3F8"
+        whiteOrange : "#ffb366",
+        yellow : '#FCC737',
+        orange : "#F26B0F",
+        pink : "#E73879",
+        purple : "#7E1891"
       },
       boxShadow: {
-        'custom-light': '0 4px 6px -1px rgba(138, 0, 230, 0.5), 0 2px 4px -1px rgba(255, 77, 255, 0.3)',
+        'custom-light': '0 2px 6px -1px #F26B0F, 0 2px 4px -1px rgba(255, 77, 255, 0.3)',
       },
       dropShadow: {
-        'custom-light': '0 1px 2px rgba(138, 0, 230, 0.5)'
+        'custom-light': '0 1px 2px #F26B0F',
+        'black': '0px 0px 1px #F26B0F',
       },
     },
   },
