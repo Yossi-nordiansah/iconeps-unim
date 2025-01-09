@@ -9,7 +9,7 @@ import { Autoplay } from 'swiper/modules';
 const Hero = () => {
 
     return (
-        <div className='relative flex justify-center h-screen'>
+        <div className='relative flex justify-center h-screen mb-2'>
             <Swiper
                 modules={[Autoplay]}
                 speed={1500}
