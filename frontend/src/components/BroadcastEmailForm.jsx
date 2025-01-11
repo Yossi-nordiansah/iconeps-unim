@@ -2,26 +2,23 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function BroadcastEmailForm() {
-  const [senderEmail, setSenderEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
-  const [recipients, setRecipients] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:5000/api/send-email', {
-        senderEmail,
+      await axios.post('http://localhost:5000/send-email', {
         subject,
         message,
-        recipients: recipients.split(',').map(email => email.trim()),
       });
       alert('Email broadcast berhasil dikirim!');
       setSubject('');
       setMessage('');
     } catch (error) {
       alert('Gagal mengirim email: ' + error.message);
+      console.log(error)
     }
   };
 

@@ -6,6 +6,7 @@ import { Login } from '../controllers/users.js';
 import { verifyToken } from '../middleware/VerifyToken.js';
 import { refreshToken } from '../controllers/refershToken.js';
 import { Logout } from '../controllers/users.js';
+import { sendEmail } from '../controllers/sendEmail.js';
 dotenv.config()
 
 const router = express.Router();
@@ -15,5 +16,6 @@ router.post('/users/register', Register);
 router.post("/users/login", Login);
 router.get("/users/token", refreshToken);
 router.delete("/users/Logout", Logout);
+router.post("/send-email", sendEmail);
 
 export default router;
