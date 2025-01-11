@@ -27,7 +27,7 @@ export const sendEmail = async (req, res) => {
                 from: "yossi.nordiansah07@gmail.com",
                 to: recipient,
                 subject: subject,
-                text: message,
+                // text: message,
                 html: `<p>${message}</p>`,
             });
         };

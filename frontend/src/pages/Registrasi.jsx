@@ -104,7 +104,7 @@ const Registrasi = () => {
               </div>
             </div>
           </div>
-        <button className='bg-gradient-to-r from-blue-600 to-blue-900 w-full py-2 rounded font-semibold text-white' type='submit' disabled={isSubmitting}>{isSubmitting ? 'Mengirim...' : 'Registrasi'}</button>
+        <button className='bg-gradient-to-r from-blue-600 to-blue-900 w-full  py-2 rounded font-semibold text-white' type='submit' disabled={isSubmitting}>{isSubmitting ? 'Mengirim...' : 'Registrasi'}</button>
       </form>
     </div>
   )
