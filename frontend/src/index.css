@@ -37,3 +37,7 @@
       font-family: 'radjdhani_light';
       src: url('./assets/fonts/Rajdhani-Light.ttf') format('truetype');
     }
+    @font-face {
+      font-family: 'cartoon';
+      src: url('./assets/fonts/Happy School.ttf') format('truetype');
+    }

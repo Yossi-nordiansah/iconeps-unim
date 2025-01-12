@@ -22,7 +22,8 @@ export default {
         radjdhani_medium:['radjdhani_medium'],
         radjdhani_bold:['radjdhani_bold'],
         radjdhani_regular:['radjdhani_regular'],
-        radjdhani_light:['radjdhani_light'] 
+        radjdhani_light:['radjdhani_light'],
+        cartoon:['cartoon'] 
       },
       colors : {
         whiteOrange : "#ffb366",
