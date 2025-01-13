@@ -7,7 +7,7 @@ import certificateIcon from "../assets/icons/certificate.svg";
 
 const Keunggulan = () => {
   return (
-    <div className='flex flex-wrap items-center justify-center py-5 gap-9 bg-orange'>
+    <div className='flex flex-wrap items-center gap-4 py-5 justify-evenly bg-orange'>
         <div className=''>
             <img src={flexibleIcon} className='block h-16 mx-auto' alt="" />
             <p className='text-sm font-semibold text-white'>Waktu Fleksibel</p>
