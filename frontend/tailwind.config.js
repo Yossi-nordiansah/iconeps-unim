@@ -26,17 +26,16 @@ export default {
         cartoon:['cartoon'] 
       },
       colors : {
-        whiteOrange : "#ffb366",
-        yellow : '#FCC737',
-        orange : "#F26B0F",
-        pink : "#E73879",
-        purple : "#7E1891"
+        primary : "#074173",
+        secondary : '#1679AB',
+        tosca : "#5DEBD7",
+        green : "#C5FF95",
       },
       boxShadow: {
-        'custom-light': '0 2px 6px -1px #F26B0F, 0 2px 4px -1px rgba(255, 77, 255, 0.3)',
+        'custom-light': '0 2px 6px -1px #074173, 0 2px 4px -1px rgba(255, 77, 255, 0.3)',
       },
       dropShadow: {
-        'custom-light': '0 1px 2px #F26B0F',
+        'custom-light': '0 1px 2px #074173',
         'black': '0px 0px 1px #F26B0F',
       },
     },

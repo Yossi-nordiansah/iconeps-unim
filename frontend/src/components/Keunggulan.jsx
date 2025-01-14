@@ -7,10 +7,10 @@ import certificateIcon from "../assets/icons/certificate.svg";
 
 const Keunggulan = () => {
   return (
-    <div className='flex flex-wrap items-center gap-4 py-5 justify-evenly bg-orange'>
+    <div className='flex flex-wrap items-center justify-center gap-4 px-2 py-5 lg:gap-10 bg-gradient-to-b from-secondary to-primary'>
         <div className=''>
             <img src={flexibleIcon} className='block h-16 mx-auto' alt="" />
-            <p className='text-sm font-semibold text-white'>Waktu Fleksibel</p>
+            <p className='w-48 text-sm font-semibold text-center text-white md:w-fit'>Waktu Fleksibel</p>
         </div>
         <div>
             <img src={materiUpdateIcon} className='block h-16 mx-auto' alt="" />
@@ -18,7 +18,7 @@ const Keunggulan = () => {
         </div>
         <div className=''>
             <img src={relevanIcon} className='block h-16 mx-auto' alt="" />
-            <p className='text-sm font-semibold text-white'>Relevan Dengan Dunia Kerja</p>
+            <p className='text-sm font-semibold text-center text-white'>Relevan Dengan Dunia Kerja</p>
         </div>
         <div>
             <img src={fasilitasICon} className='block h-16 mx-auto' alt="" />
