@@ -14,51 +14,34 @@ model kelas {
   nama_kelas  String           @db.VarChar(50)
   divisi      kelas_divisi
   jadwal      jadwal[]
-  pendaftaran pendaftaran      @relation(fields: [id_peserta], references: [id], onDelete: Cascade, map: "kelas_ibfk_1")
+  pendaftaran peserta          @relation(fields: [id_peserta], references: [id], onDelete: Cascade, map: "kelas_ibfk_1")
 
   @@index([id_peserta], map: "id_peserta")
   @@index([id_peserta], map: "id_peserta_2")
 }
 
 model mahasiswa {
-  id            Int           @id @default(autoincrement())
+  id            Int       @id @default(autoincrement())
   user_id       Int
-  nama          String        @db.VarChar(100)
-  email         String        @db.VarChar(100)
-  nomor_telepon String        @db.VarChar(15)
-  prodi         String        @db.VarChar(50)
-  semester      String        @db.VarChar(2)
-  nim           String        @db.VarChar(15)
-  users         users         @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "mahasiswa_ibfk_1")
-  pendaftaran   pendaftaran[]
+  nama          String    @db.VarChar(100)
+  email         String    @db.VarChar(100)
+  nomor_telepon String    @db.VarChar(15)
+  prodi         String    @db.VarChar(50)
+  semester      String    @db.VarChar(2)
+  nim           String    @unique(map: "nim") @db.VarChar(15)
+  users         users     @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "mahasiswa_ibfk_1")
+  peserta       peserta[]
 
   @@index([user_id], map: "mahasiswa_ibfk_1")
 }
 
-model pendaftaran {
-  id                  Int                       @id @default(autoincrement())
-  mahasiswa_id        Int
-  status              pendaftaran_status?       @default(pendaftar)
-  bukti_pembayaran    String                    @db.VarChar(255)
-  divisi              pendaftaran_divisi
-  tanggal_pendaftaran DateTime                  @default(now()) @db.Timestamp(0)
-  pilihan_kelas       pendaftaran_pilihan_kelas
-  loket_pembayaran    String                    @db.VarChar(100)
-  tanggal_pembayaran  String                    @map("tanggal pembayaran") @db.VarChar(15)
-  nominal_pembayaran  Int
-  kelas               kelas[]
-  mahasiswa           mahasiswa                 @relation(fields: [mahasiswa_id], references: [id], onDelete: Cascade, map: "pendaftaran_ibfk_1")
-  sertifikat          sertifikat[]
-
-  @@index([mahasiswa_id], map: "pendaftaran_ibfk_1")
-}
-
 model sertifikat {
-  id                  Int         @id @default(autoincrement())
+  id                  Int      @id @default(autoincrement())
+  jenis               String   @db.VarChar(10)
   id_peserta          Int
-  nomor_sertifikat    String?     @db.VarChar(50)
-  tanggal_diterbitkan DateTime    @db.Date
-  pendaftaran         pendaftaran @relation(fields: [id_peserta], references: [id], onDelete: Cascade, map: "id_peserta_fk")
+  nomor_sertifikat    String?  @db.VarChar(50)
+  tanggal_diterbitkan DateTime @db.Date
+  pendaftaran         peserta  @relation(fields: [id_peserta], references: [id], onDelete: Cascade, map: "id_peserta_fk")
 
   @@index([id_peserta], map: "id_peserta_fk")
 }
@@ -95,6 +78,41 @@ model admin {
   @@index([users_id], map: "id_users_fk")
 }
 
+model informasi_periode {
+  id         Int                       @id @default(autoincrement())
+  divisi     informasi_periode_divisi?
+  keterangan String?                   @db.Text
+}
+
+model nilai {
+  id_peserta Int     @id @default(autoincrement())
+  divisi     String  @db.VarChar(10)
+  listening  Int?
+  structure  Int?
+  reading    Int?
+  total      Int?
+  peserta    peserta @relation(fields: [id_peserta], references: [id], onDelete: Cascade, map: "nilai_ibfk_1")
+}
+
+model peserta {
+  id                  Int                   @id @default(autoincrement())
+  mahasiswa_id        Int
+  status              peserta_status?       @default(pendaftar)
+  bukti_pembayaran    String                @db.VarChar(255)
+  divisi              peserta_divisi
+  tanggal_pendaftaran DateTime              @default(now()) @db.Timestamp(0)
+  pilihan_kelas       peserta_pilihan_kelas
+  loket_pembayaran    String                @db.VarChar(100)
+  tanggal_pembayaran  String                @map("tanggal pembayaran") @db.VarChar(15)
+  nominal_pembayaran  Int
+  kelas               kelas[]
+  nilai               nilai?
+  mahasiswa           mahasiswa             @relation(fields: [mahasiswa_id], references: [id], onDelete: Cascade, map: "peserta_ibfk_1")
+  sertifikat          sertifikat[]
+
+  @@index([mahasiswa_id], map: "pendaftaran_ibfk_1")
+}
+
 enum kelas_tipe_kelas {
   weekend
   weekday
@@ -106,25 +124,29 @@ enum users_role {
   mahasiswa
 }
 
-enum pendaftaran_status {
-  pendaftar
-  terdaftar
-  peserta
-  lulus
-  remidi
-}
-
 enum kelas_divisi {
   pusbas
   puskom
 }
 
-enum pendaftaran_divisi {
+enum informasi_periode_divisi {
   pusbas
   puskom
 }
 
-enum pendaftaran_pilihan_kelas {
+enum peserta_divisi {
+  pusbas
+  puskom
+}
+
+enum peserta_pilihan_kelas {
   weekday
   weekend
+}
+
+enum peserta_status {
+  pendaftar
+  peserta
+  lulus
+  remidial
 }

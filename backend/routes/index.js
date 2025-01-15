@@ -7,6 +7,7 @@ import { verifyToken } from '../middleware/VerifyToken.js';
 import { refreshToken } from '../controllers/refershToken.js';
 import { Logout } from '../controllers/users.js';
 import { sendEmail } from '../controllers/sendEmail.js';
+import { readXlsx } from '../controllers/readXlsx.js';
 dotenv.config()
 
 const router = express.Router();
@@ -17,5 +18,6 @@ router.post("/users/login", Login);
 router.get("/users/token", refreshToken);
 router.delete("/users/Logout", Logout);
 router.post("/send-email", sendEmail);
+router.post("/save-student-scores", readXlsx);
 
 export default router;

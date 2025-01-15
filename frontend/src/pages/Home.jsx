@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import IconepsIntro from '../components/IconepsIntro'
 import Keunggulan from '../components/Keunggulan'
 import BroadcastEmailForm from '../components/BroadcastEmailForm'
+import UploadExcel from '../components/UploadExcel'
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
         <Keunggulan/>
         {/* <BroadcastEmailForm/> */}
         <IconepsIntro/>
+        <UploadExcel/>
     </div>
   )
 }
