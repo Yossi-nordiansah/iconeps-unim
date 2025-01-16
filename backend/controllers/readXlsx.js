@@ -29,8 +29,6 @@ export const readXlsx = async (req, res) => {
                 },
               });
  
-      
-            // Abaikan jika nim tidak ditemukan di database
             if (!pesertaMap.has(nim)) {
               console.log(`NIM ${nim} tidak ditemukan, data diabaikan.`);
               return null;
