@@ -16,10 +16,10 @@ const Home = () => {
         <BroadcastEmailForm/>
         <IconepsIntro/>
         <UploadExcel/>
-        <Kuisioner/>
+        {/* <Kuisioner/>
         <Login/>
         <Registrasi/>
-        //bisa hibrid bisa online
+        //bisa hibrid bisa online */}
     </div>
   )
 }
