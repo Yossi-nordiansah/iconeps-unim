@@ -5,8 +5,8 @@ import Keunggulan from '../components/Keunggulan'
 import BroadcastEmailForm from '../components/BroadcastEmailForm'
 import UploadExcel from '../components/UploadExcel'
 import Kuisioner from '../components/Kuisioner'
-import Login from '../components/Login'
-import Registrasi from './Registrasi'
+// import Login from '../components/Login'
+// import Registrasi from './Registrasi'
 
 const Home = () => {
   return (
