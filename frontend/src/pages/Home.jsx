@@ -15,7 +15,7 @@ const Home = () => {
         <Hero/>
         <Keunggulan/>
         <IconepsIntro/>
-        <Pusbas/>
+        {/* <Pusbas/> */}
     </div>
   )
 }

@@ -23,7 +23,12 @@ export default {
         radjdhani_bold:['radjdhani_bold'],
         radjdhani_regular:['radjdhani_regular'],
         radjdhani_light:['radjdhani_light'],
-        cartoon:['cartoon'] 
+        cartoon:['cartoon'],
+        montserrat_regular: ['Montserrat-Regular'],
+        montserrat_medium: ['Montserrat-Medium'],
+        montserrat_semibold: ['Montserrat-SemiBold'],
+        montserrat_bold: ['Montserrat-Bold'],
+        montserrat_extrabold: ['Montserrat-ExtraBold']
       },
       colors : {
         primary : "#074173",
