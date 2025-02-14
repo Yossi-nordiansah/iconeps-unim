@@ -1,17 +1,16 @@
 import React from 'react';
-import montase from '../assets/images/courious4.png';
 import curious from '../assets/images/penasaran.png';
 
 const IconepsIntro = () => {
   return (
-    <div className='relative h-[460px]'>
-      <div className='absolute bottom-0 block w-full h-80 bg-gradient-to-b from-secondary to-primary'>
-      <div className='absolute bottom-0 flex flex-wrap items-center mt-auto '>
-        <div className='lg:max-w-[53%] max-w-full min-w-[45%] mx-auto mt-16'>
-          <h1 className='mb-4 text-4xl text-center text-white text-nowrap lg:mb-8 sm:text-6xl font-montserrat_extrabold drop-shadow-2xl'>Apa itu ICONEPS ??</h1>
-          <p className='px-6 text-xl font-bold text-justify text-white lg:text-left drop-shadow-2xl md:text-base font-montserrat_bold'>ICONEPS (Institute for Continuing Education and Professional Services) adalah lembaga yang berada dibawah naungan Universitas Islam Majapahit yang memiliki tujuan untuk menciptakan Mahasiswa yang memiliki <i>Soft Skill</i> maupun <i>Hard Skill</i> dibidang bahasa maupun teknologi. ICONEPS sendiri memiliki 2 unit untuk menunjang tujuan dari ICONEPS, yaitu PUSBAS DAN PUSKOM</p>
+    <div className='relative sm:h-[470px] h-[650px]'>
+      <div className='absolute bottom-0 block w-full h-64 md:h-72 md:bg-gradient-to-b from-secondary to-primary'>
+      <div className='absolute bottom-0 flex flex-wrap-reverse items-center justify-start md:flex-nowrap'>
+        <div className='px-4 py-4 mx-auto xs:px-4 sm:px-10 md:bg-none bg-gradient-to-b from-secondary to-primary md:py-0 lg:mt-20 md:mt-16 sm:mt-0'>
+          <h1 className='mb-4 text-2xl text-center text-white xs:text-3xl sm:pt-6 sm:text-left sm:text-4xl text-nowrap lg:mb-4 font-montserrat_extrabold drop-shadow-2xl'>Apa itu ICONEPS ??</h1>
+          <p className='font-bold text-justify text-white lg:text-xl drop-shadow-2x font-montserrat_semibold'>ICONEPS (Institute for Continuing Education and Professional Services) adalah lembaga yang berada dibawah naungan Universitas Islam Majapahit yang memiliki tujuan untuk menciptakan Mahasiswa yang memiliki Soft Skill maupun Hard Skill dibidang bahasa maupun teknologi. ICONEPS sendiri memiliki 2 unit untuk menunjang tujuan dari ICONEPS, yaitu PUSBAS DAN PUSKOM.</p>
         </div>
-        <img src={curious} className='block mx-auto min-w-80 max-w-44 drop-shadow-2xl' alt="montase iconeps" />
+        <img src={curious} className='block pr-10 mx-auto w-60 md:w-80 drop-shadow-2xl' alt="montase iconeps" />
       </div>
       </div>
     </div>

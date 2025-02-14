@@ -45,6 +45,7 @@ export default {
       },
     },
   },
+  important: true,
   plugins: [],
 }
 
