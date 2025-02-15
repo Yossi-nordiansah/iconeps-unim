@@ -28,7 +28,8 @@ export default {
         montserrat_medium: ['Montserrat-Medium'],
         montserrat_semibold: ['Montserrat-SemiBold'],
         montserrat_bold: ['Montserrat-Bold'],
-        montserrat_extrabold: ['Montserrat-ExtraBold']
+        montserrat_extrabold: ['Montserrat-ExtraBold'],
+        netflixsansbold: ['NetflixSansBold']
       },
       colors : {
         primary : "#074173",

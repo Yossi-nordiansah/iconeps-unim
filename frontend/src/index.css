@@ -61,3 +61,7 @@
       font-family: 'Montserrat-ExtraBold';
       src: url('./assets/fonts/Montserrat-ExtraBold.ttf') format('truetype');
     }
+    @font-face {
+      font-family: 'NetflixSansBold';
+      src: url('./assets/fonts/NetflixSansBold.ttf') format('truetype');
+    }
