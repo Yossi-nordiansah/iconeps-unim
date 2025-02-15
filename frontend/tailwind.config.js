@@ -33,8 +33,9 @@ export default {
       colors : {
         primary : "#074173",
         secondary : '#1679AB',
-        tosca : "#5DEBD7",
-        green : "#C5FF95",
+        tosca : "#088395",
+        green : "#37B7C3",
+        netral : '#EBF4F6'
       },
       boxShadow: {
         'custom-light': '0 2px 6px -1px #074173, 0 2px 4px -1px rgba(255, 77, 255, 0.3)',
