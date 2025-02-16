@@ -1,7 +1,6 @@
 import React from 'react';
 import pusbas from '../assets/images/pusbas2.jpg';
 
-
 const Pusbas = () => {
   return (
     <div className='flex sm:flex-row flex-col-reverse shadow-2xl overflow-hidden bg-white rounded-tr-[50px] rounded-bl-[50px]'>
