@@ -6,6 +6,7 @@ import BroadcastEmailForm from '../components/BroadcastEmailForm'
 import UploadExcel from '../components/UploadExcel'
 import Kuisioner from '../components/Kuisioner'
 import Pusbas from '../components/Pusbas'
+import ProgramContainer from '../components/ProgramContainer'
 // import Login from '../components/Login'
 // import Registrasi from './Registrasi'
 
@@ -15,7 +16,7 @@ const Home = () => {
         <Hero/>
         <Keunggulan/>
         <IconepsIntro/>
-        <Pusbas/>
+        <ProgramContainer/>
     </div>
   )
 }
