@@ -11,7 +11,7 @@ const Pusbas = () => {
             PUSBAS adalah unit yang berkegiatan di bidang bahasa. Pelatihan yang dimiliki oleh PUSBAS adalah pelatihan bahasa Inggris. PUSBAS memiliki tugas agar Mahasiswa di lingkup Universitas Islam Majapahit dapat memiliki kemampuan baik berbicara dalam bahasa Inggris maupun dalam memahami bahasa Inggris
           </p>
           <p className='mt-2 mb-3 text-xl sm:mb-6 sm:mt-6 sm:text-2xl text-blue-950 font-netflixsansbold'>Belajar <span className='text-[#ffcc00]'>dari mana saja</span> dengan  <span className='text-[#ffcc00]'>Mentor berpengalaman</span>. Daftar sekarang dan tingkatkan kemampuan bahasa Inggrismu!</p>
-          <button className='px-5 py-2 mb-8 text-white rounded-full sm:mb-10 bg-blue-950 font-montserrat_bold'>
+          <button className='px-5 py-3 mb-8 text-white rounded-full sm:mb-10 bg-blue-950 font-montserrat_bold'>
             Daftar Sekarang
           </button>
         </div>
