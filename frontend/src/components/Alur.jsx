@@ -9,9 +9,9 @@ const Alur = () => {
 
     return (
         <div className="px-4 py-6 md:px-10">
-            <h1 className="mb-10 text-3xl underline font-robotoExtraBold text-blue-950">Alur Pelatihan ICONEPS</h1>
-            <div className="flex flex-col-reverse items-start justify-between md:flex-row">
-                <div className="md:w-1/2">
+            <h1 className="mb-10 md:text-3xl text-2xl underline font-robotoExtraBold text-blue-950">Alur Pelatihan ICONEPS</h1>
+            <div className="flex flex-col-reverse items-start justify-between lg:flex-row">
+                <div className="lg:w-1/2">
                     <div>
                         <div className="flex items-center gap-6">
                             <div className="p-1 bg-blue-500 border-4 rounded-full w-fit border-primary">
@@ -45,7 +45,7 @@ const Alur = () => {
                             <div className="p-1 bg-blue-500 border-4 rounded-full w-fit border-primary">
                                 <img src={waiting} alt="" className="w-6" />
                             </div>
-                            <h1 className="text-xl font-montserrat_extrabold text-blue-950">Melakukan Pendaftaran Program</h1>
+                            <h1 className="text-xl font-montserrat_extrabold text-blue-950">Menunggu Waktu Pelatihan</h1>
                         </div>
                         <ol className="pb-1 pl-12 mt-1 ml-5 space-y-2 text-sm list-decimal list-inside border-l-2 border-gray-400 text-blue-950 font-montserrat_extrabold">
                             <li>pilih program (pusbas/puskom)</li>
@@ -60,16 +60,16 @@ const Alur = () => {
                             <div className="p-1 bg-blue-500 border-4 rounded-full w-fit border-primary">
                                 <img src={pelatihan} alt="" className="w-6" />
                             </div>
-                            <h1 className="text-xl font-montserrat_extrabold text-blue-950">Melakukan Pendaftaran Program</h1>
+                            <h1 className="text-xl font-montserrat_extrabold text-blue-950">Pelatihan</h1>
                         </div>
                         <ol className="pb-1 pl-12 mt-1 ml-5 space-y-2 text-sm list-decimal list-inside border-l-2 border-gray-400 text-blue-950 font-montserrat_extrabold">
                             <li>Waktu pelatihan akan disesuaikan dengan kelas yang anda ikuti (weekend/weekday)</li>
                             <li>Jika anda lulus, seritifkat bisa didownload melalui website ini</li>
-                            <li>Jika tidak lulus, maka status anda akan menjadi Remidi</li>
+                            <li>Jika tidak lulus, maka anda masih bisa mengikuti remidi</li>
                         </ol>
                     </div> 
                 </div>
-                <img src={alur} alt="" className="mx-auto md:w-1/2"/>
+                <img src={alur} alt="" className="mx-auto lg:w-1/2"/>
             </div>
 
         </div>
