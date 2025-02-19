@@ -1,6 +1,6 @@
 import React from "react";
 import registrasi from "../assets/images/registrasi.png";
-import alur from "../assets/images/alur4.gif";
+import alur from "../assets/images/alur6.png";
 import pendaftaran from "../assets/images/daftar.png";
 import waiting from "../assets/images/waiting.png";
 import pelatihan from "../assets/images/certificate.png"
@@ -8,10 +8,10 @@ import pelatihan from "../assets/images/certificate.png"
 const Alur = () => {
 
     return (
-        <div className="px-4 py-6 md:px-10">
-            <h1 className="mb-10 md:text-3xl text-2xl underline font-robotoExtraBold text-blue-950">Alur Pelatihan ICONEPS</h1>
-            <div className="flex flex-col-reverse items-start justify-between lg:flex-row">
-                <div className="lg:w-1/2">
+        <div className="px-4 py-6 md:px-10 bg-gradient-to-b from-white to-blue-700">
+            <h1 className="mb-10 text-2xl underline md:text-3xl font-robotoExtraBold text-blue-950">Alur Pelatihan ICONEPS</h1>
+            <div className="flex flex-col-reverse items-start justify-between lg:items-center lg:flex-row">
+                <div className="lg:w-[50%] ">
                     <div>
                         <div className="flex items-center gap-6">
                             <div className="p-1 bg-blue-500 border-4 rounded-full w-fit border-primary">
@@ -45,7 +45,7 @@ const Alur = () => {
                             <div className="p-1 bg-blue-500 border-4 rounded-full w-fit border-primary">
                                 <img src={waiting} alt="" className="w-6" />
                             </div>
-                            <h1 className="text-xl font-montserrat_extrabold text-blue-950">Menunggu Waktu Pelatihan</h1>
+                            <h1 className="text-xl text-blue-950 font-montserrat_extrabold">Menunggu Waktu Pelatihan</h1>
                         </div>
                         <ol className="pb-1 pl-12 mt-1 ml-5 space-y-2 text-sm list-decimal list-inside border-l-2 border-gray-400 text-blue-950 font-montserrat_extrabold">
                             <li>pilih program (pusbas/puskom)</li>
@@ -69,7 +69,7 @@ const Alur = () => {
                         </ol>
                     </div> 
                 </div>
-                <img src={alur} alt="" className="mx-auto lg:w-1/2"/>
+                <img src={alur} alt="" className="mx-auto lg:w-[50%]"/>
             </div>
 
         </div>

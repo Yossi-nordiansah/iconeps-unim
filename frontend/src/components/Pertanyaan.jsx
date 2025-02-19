@@ -34,18 +34,18 @@ const Pertanyaan = () => {
         {
             id: 1,
             question: 'Berapa biaya untuk mendaftar program pelatihan?',
-            answer: "Untuk Biaya Pendaftaran program PUSBAS adalah Rp 320.000 sedangkan untuk program PUSKOM adalah Rp 440.000",
+            answer: "Untuk Biaya Pendaftaran program PUSBAS adalah Rp 320.000 sedangkan untuk program PUSKOM adalah Rp 440.000.",
             action: false,
         },
         {
             id: 2,
-            question: 'Berapa biaya berlangganan Netflix?',
-            answer: `Tonton Netflix di smartphone, tablet, Smart TV, laptop, atau perangkat streaming-mu, semuanya dengan satu harga bulanan tetap Rentang harga mulai dari Rp 54.000 hingga Rp 186.000 per bulan. Tanpa biaya ekstra, tanpa kontrak.`,
+            question: 'Apakah program pusbas dan puskom wajib bagi mahasiswa?',
+            answer: `Ya, Program ini merupakan program yang wajib diikuti bagi seluruh mahasiswa Universitas Islam Majapahit. Sertifikat ICONEPS merupakan syarat kelulusan bagi mahasiswa.`,
             action: false,
         },
         {
             id: 3,
-            question: "Di mana saya bisa menonton?",
+            question: "Dimana lokasi ruangan iconeps?",
             answer: `Tonton di mana pun, kapan pun. Masuk ke akun Netflix-mu untuk menonton langsung di netflix.com dari komputer pribadi atau di perangkat yang terhubung ke Internet dan mendukung aplikasi Netflix, termasuk smart TV, smartphone, tablet, pemutar media streaming, dan konsol game.
 
             Kamu juga bisa men-download acara favoritmu dengan aplikasi iOS, Android, atau Windows 10. Gunakan download untuk menonton saat kamu di perjalanan dan tidak punya koneksi Internet. Bawa Netflix ke mana saja.`,
@@ -53,22 +53,20 @@ const Pertanyaan = () => {
         },
         {
             id: 4,
-            question: "Bagaimana cara membatalkannya?",
-            answer: `Netflix fleksibel. Tanpa kontrak menyebalkan dan tanpa komitmen. Kamu dapat dengan mudah membatalkan akunmu secara online dengan dua kali klik. Tanpa biaya pembatalan – mulai atau hentikan akunmu kapan pun.`,
+            question: "Apa perbedaan kelas weekend dan weekday?",
+            answer: `Perbedaan kelas weekend dan weekday terletak pada waktu pelatihan, pada kelas weekday pelatihan akan dilaksanakan pada hari biasa sedangkan pada kelas weekend pelatihan dilaksanakan pada hari Sabtu dan Minggu.`,
             action: false,
         },
         {
             id: 5,
-            question: "Apa yang bisa ditonton di netflix?",
-            answer: `Netflix memiliki pustaka lengkap yang berisi film panjang, film dokumenter, acara TV, anime, Netflix original pemenang penghargaan, dan lebih banyak lagi. Tonton sepuasnya, kapan pun kamu mau.`,
+            question: "Bagaimana jika tidak lulus pada saat ujian?",
+            answer: `Apabila peserta tidak memenuhi syarat nilai yang ditetapkan maka peserta dinyatakan tidak lulus ujian. Bagi peserta yang tidak lulus akan mendapat kesempatan Remidial satu kali, dan jika dalam Remidial peserta tetap tidak memenuhi nilai yang ditetapkan maka peserta dikenakan biaya administrasi tambahan untuk mengikuti Remidial berikutnya.`,
             action: false,
         },
         {
             id: 6,
-            question: "Apakah Netflix sesuai bagi anak-anak?",
-            answer: `Pengalaman Netflix Anak disertakan dalam keanggotaan agar kamu punya kontrol orang tua saat anak-anak menikmati acara TV dan film untuk keluarga di rumah.
-
-            Profil anak dilengkapi kontrol orang tua yang dilindungi PIN sehingga kamu bisa membatasi rating usia konten yang bisa ditonton anak dan memblokir judul tertentu yang tidak boleh ditonton anak-anak..`,
+            question: "Apa perbedaan kelas online dan offline?",
+            answer: `Perbedaan kelas offline dan kelas online adalah jika kelas Online maka seluruh kegiatan pelatihan akan dilaksanakan secara daring sedangkan untuk kelas offline kegiatan pelatihan akan dilaksanakan secara daring dan luring (Hybrid).`,
             action: false,
         },
     ]);
@@ -81,14 +79,14 @@ const Pertanyaan = () => {
         }
     }
     return (
-        <div>
-            <div className='lg:w-11/12 sm:w-[93%] w-[88%] mx-auto lg:mt-4 sm:mt-8 mt-6'>
+        <div className=" bg-gradient-to-b from-blue-700 to-blue-950">
+            <div className='lg:w-11/12 sm:w-[93%] w-[88%] mx-auto lg:py-10 sm:py-8 py-6'>
                 {
                     questionsList.map((item) =>
                     (
                         <div key={item.id} className={`mb-2 duration-300 `}>
-                            <div onClick={() => handleQuestionOnClick(item.id)} className='rounded-xl flex justify-between items-center w-full lg:px-8 px-6 lg:py-3 py-2 bg-primary'>
-                                <p className='font-radjdhani_bold sm:text-2xl text-white'>{item.question}</p>
+                            <div onClick={() => handleQuestionOnClick(item.id)} className='flex items-center justify-between w-full px-6 py-2 rounded-xl lg:px-8 lg:py-3 bg-primary'>
+                                <p className='text-white font-radjdhani_bold sm:text-2xl'>{item.question}</p>
                                 <img src={arrow} alt="" className={`${item.action ? 'rotate-180 duration-100' : 'rotate-90 duration-100'} sm:w-10 w-7`} />
                             </div>
                             <div className={`sm:px-8 px-6 z-10 duration-500 overflow-hidden mt-[2px] bg-primary rounded-b-xl`}>

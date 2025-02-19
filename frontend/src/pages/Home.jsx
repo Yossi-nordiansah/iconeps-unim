@@ -8,7 +8,8 @@ import Kuisioner from '../components/Kuisioner'
 import Pusbas from '../components/Pusbas'
 import ProgramContainer from '../components/ProgramContainer'
 import Alur from '../components/Alur'
-import Pertanyaan from '../components/Pertanyaan'
+import Pertanyaan from '../components/Pertanyaan';
+import Footer from '../components/Footer'
 // import Login from '../components/Login'
 // import Registrasi from './Registrasi'
 
@@ -21,6 +22,7 @@ const Home = () => {
         <ProgramContainer/>
         <Alur/>
         <Pertanyaan/>
+        <Footer/>
     </div>
   )
 }
